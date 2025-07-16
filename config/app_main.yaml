@@ -14,5 +14,5 @@ app_main_index.sections:
             components:
                 loginform:
                     slot: '1'
-                    tpl: 'main/components/test.html.twig'
+                    tpl: 'main/components/main.html.twig'
 
