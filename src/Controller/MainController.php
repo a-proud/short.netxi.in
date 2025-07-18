@@ -53,6 +53,13 @@ class MainController extends AbstractController
         return $this->renderRequestedFormat('main/components/url_short_form.html.twig', $viewData);
     }
 
+    #[Route('/remove-expired', name: 'app_main_remove_expired')]
+    public function removeExpired(Request $request, EntityManagerInterface $em): Response
+    {
+        $em->getRepository(ShortUrl::class)->removeExpiredShortUrls();
+        return new Response('Expired short URLs removed', Response::HTTP_OK);
+    }
+
     public function renderRequestedFormat(string $view, array $parameters = []): Response
     {
         $format = $this->container->get('request_stack')

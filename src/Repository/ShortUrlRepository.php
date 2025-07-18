@@ -16,6 +16,15 @@ class ShortUrlRepository extends ServiceEntityRepository
         parent::__construct($registry, ShortUrl::class);
     }
 
+    public function removeExpiredShortUrls(): void
+    {
+        $qb = $this->createQueryBuilder('s');
+        $qb->delete()
+            ->where('DATE_ADD(s.created, s.ttl, \'DAY\') < :now')
+            ->setParameter('now', new \DateTimeImmutable());
+        $res = $qb->getQuery()->execute();
+    }
+
     //    /**
     //     * @return ShortUrl[] Returns an array of ShortUrl objects
     //     */
