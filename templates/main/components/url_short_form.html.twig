@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ form_start(form) }}
+        {{ form_row(form.url) }}
+        <button class="btn btn-primary">Get short URL</button>
+    {{ form_end(form) }}
+    
+    <div id="short-url-result"></div>
+{% endblock %}
+

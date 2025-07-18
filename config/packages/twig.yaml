@@ -1,7 +1,5 @@
 twig:
     file_name_pattern: '*.twig'
-    paths:
-        "%kernel.project_dir%/vendor/a-proud/twiew-bundle/templates": twiew
 
 when@test:
     twig:

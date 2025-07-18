@@ -4,61 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9418fc40e59d8685660234580ca87ea2",
+    "content-hash": "78f5e94e3934d1a40554086ffb22daa2",
     "packages": [
-        {
-            "name": "a-proud/twiew-bundle",
-            "version": "dev-main",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/a-proud/twiew-bundle.git",
-                "reference": "62f03f8a34a9f88a2d2348a3aa4077561152b4a0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/a-proud/twiew-bundle/zipball/62f03f8a34a9f88a2d2348a3aa4077561152b4a0",
-                "reference": "62f03f8a34a9f88a2d2348a3aa4077561152b4a0",
-                "shasum": ""
-            },
-            "require": {
-                "minwork/array": "^1.13",
-                "php": ">=7.4",
-                "symfony/twig-bundle": "*",
-                "symfony/yaml": "*",
-                "twig/extra-bundle": "^2.12|^3.0",
-                "twig/twig": "^3.5"
-            },
-            "default-branch": true,
-            "type": "symfony-bundle",
-            "autoload": {
-                "psr-4": {
-                    "AProud\\TwiewBundle\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Sergiy Krikovtsov",
-                    "email": "krikovtsov.sergey@gmail.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Provide simple and powerfull templates based on twig",
-            "keywords": [
-                "templating"
-            ],
-            "support": {
-                "issues": "https://github.com/a-proud/twiew-bundle/issues",
-                "source": "https://github.com/a-proud/twiew-bundle/tree/main"
-            },
-            "time": "2025-07-16T10:32:56+00:00"
-        },
         {
             "name": "doctrine/collections",
             "version": "2.3.0",
@@ -1185,61 +1132,6 @@
                 "source": "https://github.com/doctrine/sql-formatter/tree/1.5.2"
             },
             "time": "2025-01-24T11:45:48+00:00"
-        },
-        {
-            "name": "minwork/array",
-            "version": "v1.13.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/minwork/array.git",
-                "reference": "ccb3f84d10b2ccd327e0196e374edd12aacfe74c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/minwork/array/zipball/ccb3f84d10b2ccd327e0196e374edd12aacfe74c",
-                "reference": "ccb3f84d10b2ccd327e0196e374edd12aacfe74c",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.1"
-            },
-            "require-dev": {
-                "php-coveralls/php-coveralls": "^2.1",
-                "phpunit/phpunit": "^7.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Minwork\\Helper\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Christopher Kalkhoff",
-                    "email": "krzysztof.kalkhoff@gmail.com",
-                    "role": "Founder"
-                }
-            ],
-            "description": "Pack of advanced array functions specifically tailored for: associative (assoc) array, multidimensional array, array of objects and handling nested array elements",
-            "keywords": [
-                "Associative",
-                "array",
-                "arrays",
-                "assoc",
-                "helper",
-                "multidimensional",
-                "objects",
-                "php 7"
-            ],
-            "support": {
-                "issues": "https://github.com/minwork/array/issues",
-                "source": "https://github.com/minwork/array/tree/v1.13.5"
-            },
-            "time": "2020-10-04T22:20:56+00:00"
         },
         {
             "name": "psr/cache",
@@ -5049,80 +4941,6 @@
             "time": "2025-06-03T06:46:12+00:00"
         },
         {
-            "name": "twig/extra-bundle",
-            "version": "v3.21.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/twigphp/twig-extra-bundle.git",
-                "reference": "62d1cf47a1aa009cbd07b21045b97d3d5cb79896"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/twig-extra-bundle/zipball/62d1cf47a1aa009cbd07b21045b97d3d5cb79896",
-                "reference": "62d1cf47a1aa009cbd07b21045b97d3d5cb79896",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=8.1.0",
-                "symfony/framework-bundle": "^5.4|^6.4|^7.0",
-                "symfony/twig-bundle": "^5.4|^6.4|^7.0",
-                "twig/twig": "^3.2|^4.0"
-            },
-            "require-dev": {
-                "league/commonmark": "^1.0|^2.0",
-                "symfony/phpunit-bridge": "^6.4|^7.0",
-                "twig/cache-extra": "^3.0",
-                "twig/cssinliner-extra": "^3.0",
-                "twig/html-extra": "^3.0",
-                "twig/inky-extra": "^3.0",
-                "twig/intl-extra": "^3.0",
-                "twig/markdown-extra": "^3.0",
-                "twig/string-extra": "^3.0"
-            },
-            "type": "symfony-bundle",
-            "autoload": {
-                "psr-4": {
-                    "Twig\\Extra\\TwigExtraBundle\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com",
-                    "homepage": "http://fabien.potencier.org",
-                    "role": "Lead Developer"
-                }
-            ],
-            "description": "A Symfony bundle for extra Twig extensions",
-            "homepage": "https://twig.symfony.com",
-            "keywords": [
-                "bundle",
-                "extra",
-                "twig"
-            ],
-            "support": {
-                "source": "https://github.com/twigphp/twig-extra-bundle/tree/v3.21.0"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/twig/twig",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2025-02-19T14:29:33+00:00"
-        },
-        {
             "name": "twig/twig",
             "version": "v3.21.1",
             "source": {
@@ -5418,9 +5236,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "a-proud/twiew-bundle": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

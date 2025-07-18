@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\ShortUrlRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ShortUrlRepository::class)]
 class ShortUrl
@@ -18,6 +19,8 @@ class ShortUrl
     private ?string $hash = null;
 
     #[ORM\Column(length: 2000)]
+    #[Assert\NotBlank]
+    #[Assert\Url]
     private ?string $url = null;
 
     #[ORM\Column]
