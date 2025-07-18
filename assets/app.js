@@ -55,6 +55,6 @@ $(function () {
 window.shortUrlFormSubmit = function (response, $form)
 {
     if (response.shortUrl) {
-        $('#short-url-result').html('<a href="' + response.shortUrl + '" target="_blank">' + response.shortUrl + '</a>');
+        $('#short-url-result .short-link-text').html(response.shortUrl);
     }
 }

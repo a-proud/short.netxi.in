@@ -42,7 +42,6 @@ class MainController extends AbstractController
             $em->flush();
 
             $viewData['shortUrl'] = $request->getSchemeAndHttpHost().'/'.$shortUrl->getHash();
-
         }
 
         $viewData['title'] = 'Short URL Service';

@@ -1,11 +1,39 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    {{ form_start(form) }}
-        {{ form_row(form.url) }}
-        <button class="btn btn-primary">Get short URL</button>
-    {{ form_end(form) }}
-    
-    <div id="short-url-result"></div>
+
+    <div class="text-center mb-5">
+      <h1 class="display-5 fw-bold">🔗 Shortly</h1>
+      <p class="lead text-muted">Generate clean, short links in a second.</p>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card p-4">
+
+            {{ form_start(form) }}
+                <div class="mb-3">
+                {{ form_row(form.url) }}
+                </div>
+                <button type="submit" class="btn btn-primary w-100 btn-lg">Shorten URL</button>
+            {{ form_end(form) }}
+            
+            <div id="short-url-result" class="d-none">
+                <i class="copy-icon bi bi-clipboard" title="Скопировать"></i>
+                <span class="short-link-text">https://yourdomain/u/abc123</span>
+            </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center mt-4" id="result" style="display: none;">
+      <div class="col-md-6">
+        <div class="alert alert-success text-center">
+          Your short URL: <a href="#" id="short-link" class="fw-semibold text-decoration-underline">short.ly/abc123</a>
+        </div>
+      </div>
+    </div>
+
 {% endblock %}
 

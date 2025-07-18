@@ -1,2 +1,83 @@
-@import "~bootstrap/scss/bootstrap";
+$body-bg: #000000;
+$body-color: #f8f9fa;
 
+$primary: #FFD700;
+$secondary: #555555;
+$success: #28a745;
+$info: #0dcaf0;
+$warning: #ffc107;
+$danger: #dc3545;
+$light: #f8f9fa;
+$dark: #212529;
+
+$btn-color: #000;
+$btn-bg: $primary;
+$btn-border-color: $primary;
+$btn-hover-color: #000;
+$btn-hover-bg: darken($primary, 10%);
+$btn-hover-border-color: darken($primary, 12%);
+$btn-focus-shadow-rgb: 255, 215, 0;
+$btn-active-color: #000;
+$btn-active-bg: darken($primary, 15%);
+$btn-active-border-color: darken($primary, 18%);
+$btn-disabled-color: #333;
+$btn-disabled-bg: #666;
+$btn-disabled-border-color: #666;
+
+$input-bg: #111;
+$input-color: #FFD700;
+$input-border-color: #FFD700;
+$input-focus-bg: #000;
+$input-focus-color: #fff;
+$input-focus-border-color: lighten($primary, 5%);
+$input-placeholder-color: #888;
+
+$link-color: #FFD700;
+$link-hover-color: lighten($primary, 15%);
+
+$card-bg: #111;
+$card-color: #FFD700;
+
+$navbar-dark-color: $primary;
+$navbar-dark-hover-color: lighten($primary, 10%);
+$navbar-dark-bg: #000;
+
+@import "~bootstrap/scss/bootstrap";
+@import "bootstrap-icons/font/bootstrap-icons";
+
+#short-url-result {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFD700; // ярко-желтый
+    color: #000; // черный текст
+    font-size: 1.75rem;
+    font-weight: 600;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    margin-top: 1.5rem;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    gap: 0.75rem;
+    word-break: break-all;
+
+    i.copy-icon {
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #000;
+        transition: color 0.2s;
+    }
+
+    i.copy-icon:hover {
+        color: #333;
+    }
+
+    .short-link-text {
+        flex-grow: 1;
+        text-align: center;
+        word-break: break-all;
+        cursor: pointer;
+    }
+    .short-link-text:hover {
+        color: #333;
+    }
+}

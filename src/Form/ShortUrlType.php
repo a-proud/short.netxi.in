@@ -14,7 +14,9 @@ class ShortUrlType extends AbstractType
     {
         $builder
             ->add('url', UrlType::class, [
-                'label' => 'URL',
+                'label' => false,
+                'row_attr' => ['class' => 'mb-3'],
+                'attr' => ['class' => 'form-control form-control-lg', 'placeholder' => 'Paste your long URL here...'],
                 'required' => true,
             ]);
     }
