@@ -18,7 +18,6 @@ class MainController extends AbstractController
 {
     public function __construct(private EntityManagerInterface $entityManager, private FormHelpers $formHelpers) {}
 
-//#[Route('/blog/{id}', name: 'blog_show', methods: ['GET'], requirements: ['id' => '\d+'])]
     #[Route('/', name: 'app_main_index')]
     public function index(Request $request, EntityManagerInterface $em, EntityRelationService $entityRelationService): Response
     {
@@ -36,13 +35,20 @@ class MainController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $shortUrl->setHash(bin2hex(random_bytes(4)));
-            $shortUrl->setTtl(90);
-            $shortUrl->setUrl($form->get('url')->getData());
-            $shortUrl->setCreated(new \DateTimeImmutable());
-            $em->persist($shortUrl);
-            $em->flush();
-
+            $existingShortUrl = $em->getRepository(ShortUrl::class)
+                                        ->findOneBy(['url' => $form->get('url')->getData()]);
+            if ($existingShortUrl) {
+                $shortUrl = $existingShortUrl;
+                $shortUrl->setCreated(new \DateTimeImmutable());
+                $em->flush();
+            } else {
+                $shortUrl->setHash(bin2hex(random_bytes(4)));
+                $shortUrl->setTtl(90);
+                $shortUrl->setUrl($form->get('url')->getData());
+                $shortUrl->setCreated(new \DateTimeImmutable());
+                $em->persist($shortUrl);
+                $em->flush();
+            }
             $viewData['shortUrl'] = $request->getSchemeAndHttpHost().'/'.$shortUrl->getHash();
         } else {
             $viewData['shortUrl'] = null;
