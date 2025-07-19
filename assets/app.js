@@ -48,13 +48,47 @@ $(function () {
             });
         }
     });
-
-    
 });
 
 window.shortUrlFormSubmit = function (response, $form)
 {
     if (response.shortUrl) {
         $('#short-url-result .short-link-text').html(response.shortUrl);
+        $('#short-url-result').removeClass('d-none');
+        clickShortUrlPane();
+        $('form[name="short_url"]').addClass('d-none');
     }
 }
+
+window.clickShortUrlPane = function() {
+    const $pane = $('#short-url-result');
+    if ($pane.length) {
+        copyTextFromSelector('#short-url-result .short-link-text');
+        $('.copy-icon')
+            .removeClass('bi-clipboard')
+            .addClass('bi-clipboard-check')
+            .delay(1000)
+            .queue(function(next) {
+                $(this)
+                    .removeClass('bi-clipboard-check')
+                    .addClass('bi-clipboard');
+                next();
+            });
+    }
+};
+
+$('body').on('click', '#short-url-result', function() {
+    clickShortUrlPane();
+});
+
+window.copyTextFromSelector = function(selector) {
+    const $el = $(selector);
+    if ($el.length) {
+        const text = $el.text();
+        const tempInput = $('<input>');
+        $('body').append(tempInput);
+        tempInput.val(text).select();
+        document.execCommand('copy');
+        tempInput.remove();
+    }
+};
