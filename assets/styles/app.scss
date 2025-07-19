@@ -45,6 +45,22 @@ $navbar-dark-bg: #000;
 @import "~bootstrap/scss/bootstrap";
 @import "bootstrap-icons/font/bootstrap-icons";
 
+.input-wrapper {
+    position: relative;
+}
+
+.form-control.is-invalid, 
+.was-validated .form-control:invalid {
+    background-image: none;
+}
+
+.invalid-feedback {
+    position: absolute;
+    top: 0;
+    left: calc(100% - 150px);
+    max-width: 150px;
+}
+
 input:-webkit-autofill {
   box-shadow: 0 0 0px 1000px $input-bg inset !important;
   -webkit-box-shadow: 0 0 0px 1000px $input-bg inset !important;

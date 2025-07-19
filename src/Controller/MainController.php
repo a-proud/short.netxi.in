@@ -11,11 +11,12 @@ use App\Entity\EntityRelation;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Service\EntityRelationService;
 use App\Form\ShortUrlType;
-
+use App\Service\FormHelpers;
 use Doctrine\DBAL\Connection;
 
 class MainController extends AbstractController
 {
+    public function __construct(private EntityManagerInterface $entityManager, private FormHelpers $formHelpers) {}
 
 //#[Route('/blog/{id}', name: 'blog_show', methods: ['GET'], requirements: ['id' => '\d+'])]
     #[Route('/', name: 'app_main_index')]
@@ -31,6 +32,7 @@ class MainController extends AbstractController
                 'data-submithandler' => 'shortUrlFormSubmit',
             ],
         ]);
+
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -42,6 +44,9 @@ class MainController extends AbstractController
             $em->flush();
 
             $viewData['shortUrl'] = $request->getSchemeAndHttpHost().'/'.$shortUrl->getHash();
+        } else {
+            $viewData['shortUrl'] = null;
+            $viewData['errors'] = $this->formHelpers->getArrErrors($form);
         }
 
         $viewData['title'] = 'Short URL Service';

@@ -20,7 +20,12 @@ class ShortUrl
 
     #[ORM\Column(length: 2000)]
     #[Assert\NotBlank]
-    #[Assert\Url]
+    #[Assert\Url(
+        protocols: ['http', 'https']
+    )]
+    #[Assert\Regex(
+        pattern: '/^(https?:\/\/)?([\w\-]+\.)+[\w\-]+(\/[\w\-._~:\/?#[\]@!$&\'()*+,;=]*)?$/i'
+    )]
     private ?string $url = null;
 
     #[ORM\Column]

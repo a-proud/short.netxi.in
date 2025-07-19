@@ -57,6 +57,17 @@ window.shortUrlFormSubmit = function (response, $form)
         $('#short-url-result').removeClass('d-none');
         clickShortUrlPane();
         $('form[name="short_url"]').addClass('d-none');
+    } else if (response.errors) {
+        $form.find('.is-invalid').removeClass('is-invalid');
+        $form.find('.invalid-feedback').removeClass('d-block').addClass('d-none').html('');
+        for (const [fieldName, errors] of Object.entries(response.errors)) {
+            const $input = $form.find(`[name="short_url[${fieldName}]"]`);
+            if ($input.length) {
+                $input.addClass('is-invalid');
+                const errorHtml = errors.map(e => `${e}`).join(' ');
+                $input.closest('.input-wrapper').find('.invalid-feedback').removeClass('d-none').addClass('d-block').html(errorHtml);
+            }
+        }
     }
 }
 

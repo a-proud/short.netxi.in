@@ -12,25 +12,18 @@
         <div class="card p-4">
 
             {{ form_start(form) }}
-                <div class="mb-3">
+              <div class="input-wrapper">
                 {{ form_row(form.url) }}
-                </div>
+                <div class="invalid-feedback d-none">{{ form_errors(form.url) }}</div>
+              </div>
                 <button type="submit" class="btn btn-primary w-100 btn-lg">Shorten URL</button>
             {{ form_end(form) }}
             
             <div id="short-url-result" class="d-none">
                 <i class="copy-icon bi bi-clipboard" title="Скопировать"></i>
-                <span class="short-link-text">https://yourdomain/u/abc123</span>
+                <span class="short-link-text"></span>
             </div>
 
-        </div>
-      </div>
-    </div>
-
-    <div class="row justify-content-center mt-4" id="result" style="display: none;">
-      <div class="col-md-6">
-        <div class="alert alert-success text-center">
-          Your short URL: <a href="#" id="short-link" class="fw-semibold text-decoration-underline">short.ly/abc123</a>
         </div>
       </div>
     </div>
