@@ -64,7 +64,7 @@ window.shortUrlFormSubmit = function (response, $form)
             const $input = $form.find(`[name="short_url[${fieldName}]"]`);
             if ($input.length) {
                 $input.addClass('is-invalid');
-                const errorHtml = errors.map(e => `${e}`).join(' ');
+                const errorHtml = errors.shift();
                 $input.closest('.input-wrapper').find('.invalid-feedback').removeClass('d-none').addClass('d-block').html(errorHtml);
             }
         }
